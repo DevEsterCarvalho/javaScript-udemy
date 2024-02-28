@@ -19,3 +19,4 @@ console.log (typeof media); //tipo do dado
 console.log (typeof Number); //função
 
 console.log (7/0);
+
