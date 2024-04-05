@@ -1,0 +1,3 @@
+//crie uma função que receba 4 números com paramentro (numero, minimo, maximo, inclusivo) e retorne se o parametro numero está entre o minimo e o maximo.
+//Quando o parametro inclusivo for true, tenha 'entre' como inclusivo ou seja, considerando se o número é igual a minimo ou a maximo.
+//Caso o parametro inclusivo não seja informado, seu valor padrão deverá ser false, portanto, a lógica será exclusiva, não considerando se o número é igual a minimo ou a maximo
