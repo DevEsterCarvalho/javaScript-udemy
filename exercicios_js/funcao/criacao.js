@@ -9,7 +9,7 @@ const obj = {} //armazenando em um atributo de objeto
 obj.falar = function() {return 'opa'}
 console.log(obj.falar())
 
-function run(fun) { //oassando função como parametro
+function run(fun) { //passando função como parametro
     fun()
 }
 run(function () { console.log('Executando...')})
