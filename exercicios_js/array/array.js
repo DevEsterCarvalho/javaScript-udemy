@@ -13,7 +13,7 @@ aprovados[3] = 'Paulo'
 aprovados.push('Abia')
 console.log(aprovados.length)
 
-aprovados[9] = 'Rafel'
+aprovados[9] = 'Rafael'
 console.log(aprovados.length)
 console.log(aprovados[8] === undefined)
 
