@@ -1,6 +1,5 @@
 //com promisse
 const http = require('http')
-const { reject } = require('lodash')
 
 const getTurma= (letra) => {
     const url = `http://files.cod3r.com.br/curso-js/turma${letra}.json`
