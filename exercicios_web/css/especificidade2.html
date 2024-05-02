@@ -5,7 +5,20 @@
     <meta charset="UTF-8">
     <title>Especificidade CSS</title>
     <style>
-        /* https://specificity.keegan.st/ */
+        /* https://specificity.keegan.st/ 
+        1. inline
+        2. id
+        3. classe, pseudo-classe, atributo
+        4. elemento, pseudo-elemento*/
+        
+        body { font-size: 40px; }
+        div { background-color: #00b; color: #fff; }
+        div [wm-cor] { background-color: darkorange; } /*div com atributo maior especificidade*/
+        div::hover { background-color: purple; } /*mesma especificidade da div com atributo mas vence pela ordem de processamento*/
+        div.estilo { background-color: green;} /*vence a pseudo-clase pela ordem de processamento*/
+        #unico1, #unico2 { background-color:  #000; }
+        div:hover, #unico1:hover { background-color: purple;}
+
     </style>
 </head>
 
