@@ -6,7 +6,16 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /*p ~ ol estão no mesmo pai então seleciona a ol certinho
+        p + ul seleciona a ul que vem diretamente após o p
+        #aninhado > div pega um filho direto do aninhado
+        [feira*=sa] seleciona o atributo feira que contem sa junto
+        [feira] seleciona o atributo feira
+        span :nth-child(1) pega o primeiro filho*/
+        .tag {
+        color: #ff0;
+        background-color: #f77;
+        }
     </style>
 </head>
 
