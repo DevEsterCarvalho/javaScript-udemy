@@ -77,13 +77,13 @@ function Passaro(alturaJogo) {
     window.onkeydown = e => voando = true
     window.onkeyup = e => voando = false
     this.animar = () => {
-        const novoY = this.getY() + (voando ? 10 : -7)
+        const novoY = this.getY() + (voando ? 8 : -5)
         const alturaMaxima = alturaJogo - this.elemento.clientHeight
 
         if (novoY <= 0) {
             this.setY(0)
         } else if (novoY >= alturaMaxima) {
-            this.setY(alturaJogo)
+            this.setY(alturaMaxima)
         } else {
             this.setY(novoY)
         }
@@ -99,16 +99,16 @@ function Progresso() {
     this.atualizarPontos(0)
 }
 
-//const barreiras = new Barreiras(700, 1100, 200, 400)
-//const passaro = new Passaro(700)
-//const areaDoJogo = document.querySelector('[wm-flappy]')
-//areaDoJogo.appendChild(passaro.elemento)
-//areaDoJogo.appendChild(new Progresso().elemento)
-//barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
-//setInterval(() => {
-//    barreiras.animar()
-//    passaro.animar()
-//}, 20)
+const barreiras = new Barreiras(700, 1100, 200, 400)
+const passaro = new Passaro(700)
+const areaDoJogo = document.querySelector('[wm-flappy]')
+areaDoJogo.appendChild(passaro.elemento)
+areaDoJogo.appendChild(new Progresso().elemento)
+barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
+setInterval(() => {
+    barreiras.animar()
+    passaro.animar()
+}, 20)
 
 function estaoSobrepostos(elementoA, elementoB) {
     const a = elementoA.getBoundingClientRect()
@@ -121,11 +121,11 @@ function estaoSobrepostos(elementoA, elementoB) {
 }
 
 function colidiu(passaro, barreiras) {
-    barreiras.pares.forEach(ParDeBarreiras => {
-        let colidiu = false
+    let colidiu = false
+    barreiras.pares.forEach(parDeBarreiras => {
         if (!colidiu) {
-            const superior = ParDeBarreiras.superior.elemento
-            const inferior = ParDeBarreiras.inferior.elemento
+            const superior = parDeBarreiras.superior.elemento
+            const inferior = parDeBarreiras.inferior.elemento
             colidiu = estaoSobrepostos(passaro.elemento, superior) 
             || estaoSobrepostos(passaro.elemento, inferior)
         }
@@ -154,7 +154,7 @@ function FlappBird() {
             barreiras.animar()
             passaro.animar()
 
-            if (colidiu(passaro, barreiras)) {
+            if(colidiu(passaro, barreiras)) {
                 clearInterval(temporizador)
             }
         },20)
