@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser')
 const express = require('express')
+const { result } = require('lodash')
 const multer = require('multer')
 const app = express()
 
@@ -31,6 +32,13 @@ app.post('/formulario', (req, res) => {
     res.send({
         ...req.body,
         id: 7
+    })
+})
+
+app.get('/parOuImpar', (req, res) => {
+    const par = parseInt(req.query.numero) % 2 === 0
+    res.send({
+        result : par ? 'par' : 'impar'
     })
 })
 
