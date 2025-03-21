@@ -1,0 +1,15 @@
+.nav-item {
+	color: white;
+	padding: 10px;
+	display: block;
+	font-weight: 300;
+	text-decoration: none !important;
+}
+
+.nav-item i {
+	margin-right: 8px;
+}
+
+.nav-item:hover {
+	background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
+}
