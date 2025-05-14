@@ -17,6 +17,11 @@ function Inicio() {
 			<Navegador texto="Navegação 01" destino="/navegacao" cor="yellow" />
 			<Navegador texto="Navegação 02" destino="/cliente/123" cor="blue" />
 			<Navegador texto="Componente com Estado" destino="/estado" />
+			<Navegador
+				texto="Integração com API #01"
+				destino="/integracao_1"
+				cor="pink"
+			/>
 		</div>
 	);
 }
